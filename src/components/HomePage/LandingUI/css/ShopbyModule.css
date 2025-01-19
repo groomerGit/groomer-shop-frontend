@@ -1,0 +1,200 @@
+.shop-by-section {
+    background-color: #000;
+    color: white;
+    padding: 40px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+  }
+
+  .title {
+    font-size: 48px;
+    font-family: serif;
+    margin-bottom: 30px;
+    font-weight: 300;
+  }
+
+  .navigation {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 50px;
+  }
+
+  .nav-link {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 5px 0;
+    position: relative;
+  }
+
+  .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+  }
+
+  .concerns-container {
+    width: 100%;
+    max-width: 1200px;
+    overflow: hidden;
+    margin-bottom: 30px;
+  }
+
+  .concerns-slider {
+    display: flex;
+    transition: transform 0.5s ease;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .concern-item {
+    flex: 0 0 calc((100% - 100px) / 6);
+    display: flex;
+    justify-content: center;
+  }
+
+  .concern-circle {
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .concern-circle:hover {
+    border-color: white;
+  }
+
+  .concern-circle span {
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .slider-controls {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .control-button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    background: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s ease;
+  }
+
+  .control-button:hover {
+    border-color: white;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .concern-item {
+      flex: 0 0 calc((100% - 80px) / 5);
+    }
+
+    .concern-circle {
+      width: 130px;
+      height: 130px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    .concern-item {
+      flex: 0 0 calc((100% - 60px) / 4);
+    }
+
+    .concern-circle {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .title {
+      font-size: 36px;
+    }
+
+    .concern-item {
+      flex: 0 0 calc((100% - 40px) / 3);
+    }
+
+    .concern-circle {
+      width: 100px;
+      height: 100px;
+    }
+
+    .concern-circle span {
+      font-size: 14px;
+    }
+
+    .navigation {
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .concern-item {
+      flex: 0 0 calc((100% - 20px) / 2);
+    }
+
+    .concern-circle {
+      width: 90px;
+      height: 90px;
+    }
+
+    .concern-circle span {
+      font-size: 12px;
+    }
+
+    .navigation {
+      gap: 15px;
+      font-size: 14px;
+    }
+  }
+
+  /* Touch Device Optimization */
+  @media (hover: none) {
+    .concern-circle {
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .control-button {
+      padding: 20px;
+    }
+  }
+
+  /* High Contrast Mode */
+  @media (prefers-contrast: high) {
+    .concern-circle {
+      border-color: white;
+    }
+  }
+
+  /* Reduced Motion */
+  @media (prefers-reduced-motion: reduce) {
+    .concerns-slider {
+      transition: none;
+    }
+  }

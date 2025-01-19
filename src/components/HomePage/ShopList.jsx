@@ -24,7 +24,7 @@ function SalonListPage() {
   const [minRating, setMinRating] = useState(0);
   const [sortBy, setSortBy] = useState("popularity");
   const [url, setUrl] = useState(
-    "http://localhost:8000/user/shops?city=nellore"
+    "https://api.groomer.today/api/user/shops?city=nellore"
   );
   useEffect(() => {
     const fetchSalonData = async () => {
@@ -43,7 +43,7 @@ function SalonListPage() {
   }, [url]);
 
   function filterParams() {
-    let dummyUrl = "http://localhost:8000/user/shops?city=nellore";
+    let dummyUrl = "https://api.groomer.today/api/user/shops?city=nellore";
     if (sex !== "unisex") {
       dummyUrl = dummyUrl + `&sex=${sex}`;
     }
